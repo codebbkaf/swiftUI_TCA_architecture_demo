@@ -8,7 +8,7 @@
 import SwiftUI
 import ComposableArchitecture
 
-struct ContentView: View {
+struct AuthenticationView: View {
     
     private let loginStore: StoreOf<LoginReducer>
     
@@ -30,7 +30,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView(loginStore: Store(initialState: LoginReducer.State()) {
+    AuthenticationView(loginStore: Store(initialState: LoginReducer.State()) {
         LoginReducer()
     })
 }

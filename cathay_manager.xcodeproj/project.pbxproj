@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9D0F1E342B8CF230002B7F15 /* cathay_managerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E332B8CF230002B7F15 /* cathay_managerApp.swift */; };
-		9D0F1E362B8CF230002B7F15 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E352B8CF230002B7F15 /* ContentView.swift */; };
+		9D0F1E362B8CF230002B7F15 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E352B8CF230002B7F15 /* AuthenticationView.swift */; };
 		9D0F1E382B8CF232002B7F15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F1E372B8CF232002B7F15 /* Assets.xcassets */; };
 		9D0F1E3B2B8CF232002B7F15 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D0F1E3A2B8CF232002B7F15 /* Preview Assets.xcassets */; };
 		9D0F1E452B8CF232002B7F15 /* cathay_managerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E442B8CF232002B7F15 /* cathay_managerTests.swift */; };
@@ -48,7 +48,7 @@
 /* Begin PBXFileReference section */
 		9D0F1E302B8CF230002B7F15 /* cathay_manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cathay_manager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D0F1E332B8CF230002B7F15 /* cathay_managerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cathay_managerApp.swift; sourceTree = "<group>"; };
-		9D0F1E352B8CF230002B7F15 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9D0F1E352B8CF230002B7F15 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		9D0F1E372B8CF232002B7F15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D0F1E3A2B8CF232002B7F15 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9D0F1E402B8CF232002B7F15 /* cathay_managerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cathay_managerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,10 +100,10 @@
 		9D0F1E272B8CF230002B7F15 = {
 			isa = PBXGroup;
 			children = (
-				9D1958D32B8DE796001C21D1 /* Localizable.strings */,
 				9D0F1E322B8CF230002B7F15 /* cathay_manager */,
 				9D0F1E432B8CF232002B7F15 /* cathay_managerTests */,
 				9D0F1E4D2B8CF232002B7F15 /* cathay_managerUITests */,
+				9D1958D32B8DE796001C21D1 /* Localizable.strings */,
 				9D0F1E312B8CF230002B7F15 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,11 +123,9 @@
 			children = (
 				9D1958CE2B8DE746001C21D1 /* cathay-manager-Info.plist */,
 				9D0F1E332B8CF230002B7F15 /* cathay_managerApp.swift */,
-				9D0F1E352B8CF230002B7F15 /* ContentView.swift */,
-				9D1958CA2B8DCE26001C21D1 /* Welcome */,
+				9D1958D62B8DF7F7001C21D1 /* View */,
 				9D1958C92B8DCE10001C21D1 /* Design */,
 				9D1958C82B8DCE05001C21D1 /* Components */,
-				9D0F1E642B8DADB8002B7F15 /* Login */,
 				9D0F1E372B8CF232002B7F15 /* Assets.xcassets */,
 				9D0F1E392B8CF232002B7F15 /* Preview Content */,
 			);
@@ -163,9 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				9D0F1E622B8DAD0E002B7F15 /* LoginView.swift */,
-				9D0F1E6B2B8DAEC7002B7F15 /* LoginReducer.swift */,
-				9D0F1E652B8DADDB002B7F15 /* LoginState.swift */,
-				9D0F1E672B8DADF6002B7F15 /* LoginAction.swift */,
+				9D1958D72B8DF828001C21D1 /* Composable */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -203,6 +199,34 @@
 				9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		9D1958D52B8DF7E5001C21D1 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F1E352B8CF230002B7F15 /* AuthenticationView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		9D1958D62B8DF7F7001C21D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9D1958D52B8DF7E5001C21D1 /* Authentication */,
+				9D1958CA2B8DCE26001C21D1 /* Welcome */,
+				9D0F1E642B8DADB8002B7F15 /* Login */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9D1958D72B8DF828001C21D1 /* Composable */ = {
+			isa = PBXGroup;
+			children = (
+				9D0F1E6B2B8DAEC7002B7F15 /* LoginReducer.swift */,
+				9D0F1E652B8DADDB002B7F15 /* LoginState.swift */,
+				9D0F1E672B8DADF6002B7F15 /* LoginAction.swift */,
+			);
+			path = Composable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +369,7 @@
 			files = (
 				9D0F1E6C2B8DAEC7002B7F15 /* LoginReducer.swift in Sources */,
 				9D0F1E662B8DADDB002B7F15 /* LoginState.swift in Sources */,
-				9D0F1E362B8CF230002B7F15 /* ContentView.swift in Sources */,
+				9D0F1E362B8CF230002B7F15 /* AuthenticationView.swift in Sources */,
 				9D0F1E5E2B8DA145002B7F15 /* WelcomeView.swift in Sources */,
 				9D1958CD2B8DD515001C21D1 /* InfoBannerView.swift in Sources */,
 				9D0F1E632B8DAD0E002B7F15 /* LoginView.swift in Sources */,

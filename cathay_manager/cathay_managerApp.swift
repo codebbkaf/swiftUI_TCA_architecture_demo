@@ -17,7 +17,7 @@ struct cathay_managerApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(loginStore: loginStore)
+            AuthenticationView(loginStore: loginStore)
         }
     }
 }

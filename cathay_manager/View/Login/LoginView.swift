@@ -91,7 +91,7 @@ struct LoginView: View {
 }
 
 #Preview {
-    ContentView(loginStore: Store(initialState: LoginReducer.State()) {
+    AuthenticationView(loginStore: Store(initialState: LoginReducer.State()) {
         LoginReducer()
     })
 }
