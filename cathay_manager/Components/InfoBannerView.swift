@@ -28,5 +28,5 @@ struct InfoBannerView: View {
 }
 
 #Preview {
-    InfoBannerView(message: "帳號或密碼不正確 ，請重新確認或以「忘記密碼？」登入")
+    InfoBannerView(message: NSLocalizedString("login__page_account_or_password_error", comment: ""))
 }

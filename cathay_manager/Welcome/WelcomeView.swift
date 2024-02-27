@@ -20,7 +20,7 @@ struct WelcomeView: View {
                 Image("cathay_mark_logo")
                     .frame(height: 50)
                 Spacer()
-                Text("嗨！歡迎回來")
+                Text(NSLocalizedString("welcome__page_title", comment: ""))
                     .font(.title)
                     .fontWeight(.bold)
                 HStack(alignment: .center) {

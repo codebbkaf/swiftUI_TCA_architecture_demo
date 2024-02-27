@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  cathay_manager
+
+  Created by 曾華宇 on 2024/2/27.
+  
+*/
+"welcome__page_title" = "Hi! Welcome back";
+"login__page_login_title" = "Login";
+"login__page_login_hint" = "Please enter your username and password";
+"login__page_account_or_password_error" = "The username or password is incorrect, please reconfirm or log in with 'Forgot Password?'";
+"login__page_account_title" = "Username";
+"login__page_password_title" = "Password";
+"login__page_account_placeholder" = "Enter username";
+"login__page_password_placeholder" = "Enter password";
+"login__page_account_format_error" = "Username format is incorrect";
+"login__page_forget_password" = "Forgot Password?";
+"login__page_login_button_title" = "Login";

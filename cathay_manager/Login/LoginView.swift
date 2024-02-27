@@ -31,10 +31,10 @@ struct LoginView: View {
                         Spacer()
                         HStack {
                             VStack (alignment:.leading, spacing: Style.spacing) {
-                                Text("登入")
+                                Text(NSLocalizedString("login__page_login_title", comment: ""))
                                     .font(.title2)
                                     .fontWeight(.bold)
-                                Text("請輸入您的帳號密碼")
+                                Text(NSLocalizedString("login__page_login_hint", comment: ""))
                                     .font(.title3)
                                     .fontWeight(.medium)
                                     .foregroundStyle(Color.gray)
@@ -43,17 +43,17 @@ struct LoginView: View {
                         }
                         .padding(.vertical, Style.spacing)
                         if store.state.loginStatus == .error {
-                            InfoBannerView(message: "帳號或密碼不正確 ，請重新確認或以「忘記密碼？」登入")
+                            InfoBannerView(message: NSLocalizedString("login__page_account_or_password_error", comment: ""))
                         }
                         VStack(alignment: .leading, spacing: Style.spacing) {
-                            LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false) { email, isValid in
+                            LoginTextField(title: NSLocalizedString("login__page_account_title", comment: ""), placeHolder: NSLocalizedString("login__page_account_placeholder", comment: ""), errorWording: NSLocalizedString("login__page_account_format_error", comment: ""), pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false) { email, isValid in
                                 isAccountValid = isValid
                                 store.send(.emailChanged(email))
                             }
-                            LoginTextField(title: "密碼", placeHolder: "輸入密碼", errorWording: "", pattern: "", keyboardType: .default, isSecurity: true) { password, _ in
+                            LoginTextField(title: NSLocalizedString("login__page_password_title", comment: ""), placeHolder: NSLocalizedString("login__page_password_placeholder", comment: ""), errorWording: "", pattern: "", keyboardType: .default, isSecurity: true) { password, _ in
                                 store.send(.passwordChanged(password))
                             }
-                            Text("忘記密碼?")
+                            Text(NSLocalizedString("login__page_forget_password", comment: ""))
                                 .foregroundStyle(CathayColor.primary)
                                 .padding(.top, Style.spacing)
                             Button(action: {
@@ -70,7 +70,7 @@ struct LoginView: View {
                                     }
                                 }
                                 if store.state.loginStatus != .loading {
-                                    Text("登入")
+                                    Text(NSLocalizedString("login__page_login_button_title", comment: ""))
                                         .foregroundColor(.white)
                                         .frame(maxWidth: .infinity)
                                         .padding()

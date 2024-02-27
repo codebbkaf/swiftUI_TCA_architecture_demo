@@ -21,9 +21,13 @@ struct LoginReducer {
                 })
             case .passwordChanged(let password):
                 state.password = password
-                return .run(operation: { send in
-                    await send(.statusChange(.idle))
-                })
+                if state.loginStatus != .idle {
+                    return .run(operation: { send in
+                        await send(.statusChange(.idle))
+                    })
+                } else {
+                    return .none
+                }
             case .statusChange(let status):
                 state.loginStatus = status
                 return .none

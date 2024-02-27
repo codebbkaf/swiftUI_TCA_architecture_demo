@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  cathay_manager
+
+  Created by 曾華宇 on 2024/2/27.
+  
+*/
+"welcome__page_title" = "嗨！歡迎回來";
+"login__page_login_title" = "登入";
+"login__page_login_hint" = "請輸入您的帳號密碼";
+"login__page_account_or_password_error" = "帳號或密碼不正確 ，請重新確認或以「忘記密碼？」登入";
+"login__page_account_title" = "帳號";
+"login__page_password_title" = "密碼";
+"login__page_account_placeholder" = "輸入帳號";
+"login__page_password_placeholder" = "輸入密碼";
+"login__page_account_format_error" = "帳號格式不正確";
+"login__page_forget_password" = "忘記密碼";
+"login__page_login_button_title" = "登入";

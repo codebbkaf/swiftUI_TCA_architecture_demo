@@ -25,6 +25,7 @@
 		9D1958C52B8DC4C2001C21D1 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */; };
 		9D1958C72B8DC977001C21D1 /* LoginTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */; };
 		9D1958CD2B8DD515001C21D1 /* InfoBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958CC2B8DD515001C21D1 /* InfoBannerView.swift */; };
+		9D1958D12B8DE796001C21D1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D1958D32B8DE796001C21D1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldModifier.swift; sourceTree = "<group>"; };
 		9D1958CC2B8DD515001C21D1 /* InfoBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBannerView.swift; sourceTree = "<group>"; };
+		9D1958CE2B8DE746001C21D1 /* cathay-manager-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cathay-manager-Info.plist"; sourceTree = SOURCE_ROOT; };
+		9D1958D22B8DE796001C21D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9D1958D42B8DE85D001C21D1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 		9D0F1E272B8CF230002B7F15 = {
 			isa = PBXGroup;
 			children = (
+				9D1958D32B8DE796001C21D1 /* Localizable.strings */,
 				9D0F1E322B8CF230002B7F15 /* cathay_manager */,
 				9D0F1E432B8CF232002B7F15 /* cathay_managerTests */,
 				9D0F1E4D2B8CF232002B7F15 /* cathay_managerUITests */,
@@ -116,6 +121,7 @@
 		9D0F1E322B8CF230002B7F15 /* cathay_manager */ = {
 			isa = PBXGroup;
 			children = (
+				9D1958CE2B8DE746001C21D1 /* cathay-manager-Info.plist */,
 				9D0F1E332B8CF230002B7F15 /* cathay_managerApp.swift */,
 				9D0F1E352B8CF230002B7F15 /* ContentView.swift */,
 				9D1958CA2B8DCE26001C21D1 /* Welcome */,
@@ -283,11 +289,12 @@
 			};
 			buildConfigurationList = 9D0F1E2B2B8CF230002B7F15 /* Build configuration list for PBXProject "cathay_manager" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = "zh-Hant";
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 9D0F1E272B8CF230002B7F15;
 			packageReferences = (
@@ -310,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D0F1E3B2B8CF232002B7F15 /* Preview Assets.xcassets in Resources */,
+				9D1958D12B8DE796001C21D1 /* Localizable.strings in Resources */,
 				9D0F1E382B8CF232002B7F15 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,12 +390,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		9D1958D32B8DE796001C21D1 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D1958D22B8DE796001C21D1 /* en */,
+				9D1958D42B8DE85D001C21D1 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		9D0F1E522B8CF232002B7F15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -451,6 +472,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -513,6 +535,7 @@
 				DEVELOPMENT_TEAM = KU48Y2UB6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "cathay-manager-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -547,6 +570,7 @@
 				DEVELOPMENT_TEAM = KU48Y2UB6V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "cathay-manager-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

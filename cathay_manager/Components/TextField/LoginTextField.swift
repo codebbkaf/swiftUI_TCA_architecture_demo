@@ -44,6 +44,7 @@ struct LoginTextField: View {
             ZStack(alignment: .trailing) {
                 if showEyeButton {
                     SecureField(placeHolder, text: $content)
+                        .disableAutocorrection(true)
                         .onChange(of: content) { newValue in
                             let contentWithMax = String(newValue.prefix(maxLength))
                             if content.count > maxLength {
@@ -56,6 +57,7 @@ struct LoginTextField: View {
                 }
                 if !showEyeButton {
                     TextField(placeHolder, text: $content)
+                        .disableAutocorrection(true)
                         .onChange(of: content) { newValue in
                             let contentWithMax = String(newValue.prefix(maxLength))
                             if content.count > maxLength {
@@ -96,6 +98,6 @@ struct LoginTextField: View {
 
 struct LoginTextField_Previews: PreviewProvider {
     static var previews: some View {
-        LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false, onChange: nil)
+        LoginTextField(title: NSLocalizedString("login__page_account_title", comment: ""), placeHolder: NSLocalizedString("login__page_account_placeholder", comment: ""), errorWording: NSLocalizedString("login__page_account_format_error", comment: ""), pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false, onChange: nil)
     }
 }
