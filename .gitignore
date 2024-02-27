@@ -31,6 +31,7 @@ DerivedData/
 *.dSYM
 
 ## Playgrounds
+.DS_Store
 timeline.xctimeline
 playground.xcworkspace
 
