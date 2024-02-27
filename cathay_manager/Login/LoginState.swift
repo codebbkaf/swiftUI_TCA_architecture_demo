@@ -11,12 +11,12 @@ extension LoginReducer {
     struct State: Equatable {
         var email: String = ""
         var password: String = ""
-        var status: Status = .loading
+        var loginStatus: Status = .loading
         
         enum Status: Equatable {
             case idle
             case loading
-            case error(String)
+            case error
         }
     }
 }

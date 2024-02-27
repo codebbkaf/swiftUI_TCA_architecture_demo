@@ -16,11 +16,9 @@ struct LoginReducer {
             case .emailChanged(let email):
                 state.email = email
                 return .none
-                
             case .passwordChanged(let password):
                 state.password = password
                 return .none
-                
             case .loginButtonTapped:
                 return .none
             }

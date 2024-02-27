@@ -10,6 +10,8 @@ import ComposableArchitecture
 
 struct LoginView: View {
     
+    @State var isAccountValid: Bool = false
+
     private struct Style {
         static let spacing: CGFloat = 20
     }
@@ -41,20 +43,13 @@ struct LoginView: View {
                         }
                         .padding(.vertical, Style.spacing)
                         VStack(alignment: .leading, spacing: Style.spacing) {
-                            Text("帳號")
-                                .foregroundStyle(Color.gray)
-                            TextField("輸入帳號", text: store.binding(
-                                get: \.email,
-                                send: { .emailChanged($0) }
-                            ))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            Text("密碼")
-                                .foregroundStyle(Color.gray)
-                            SecureField("輸入密碼", text: store.binding(
-                                get: \.password,
-                                send: { .passwordChanged($0) }
-                            ))
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", textContentType: .emailAddress, isSecurity: false) { email, isValid in
+                                isAccountValid = isValid
+                                store.send(.emailChanged(email))
+                            }
+                            LoginTextField(title: "密碼", placeHolder: "輸入密碼", errorWording: "密碼格式不正確", pattern: "", textContentType: .password, isSecurity: true) { password, _ in
+                                store.send(.passwordChanged(password))
+                            }
                             Text("忘記密碼?")
                                 .foregroundStyle(CathayColor.primary)
                                 .padding(.top, Style.spacing)
@@ -65,9 +60,10 @@ struct LoginView: View {
                                     .foregroundColor(.white)
                                     .frame(maxWidth: .infinity)
                                     .padding()
-                                    .background(CathayColor.primary)
+                                    .background(isAccountValid && !store.state.password.isEmpty ? CathayColor.primary : Color.gray.opacity(0.5))
                                     .cornerRadius(10)
                             }
+                            .disabled(!(isAccountValid && !store.state.password.isEmpty))
                         }
                         Spacer()
                     }
