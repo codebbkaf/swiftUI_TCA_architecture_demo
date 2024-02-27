@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct LoginView: View {
     
     @State var isAccountValid: Bool = false
-
+    
     private struct Style {
         static let spacing: CGFloat = 20
     }
@@ -42,28 +42,43 @@ struct LoginView: View {
                             Spacer()
                         }
                         .padding(.vertical, Style.spacing)
+                        if store.state.loginStatus == .error {
+                            InfoBannerView(message: "帳號或密碼不正確 ，請重新確認或以「忘記密碼？」登入")
+                        }
                         VStack(alignment: .leading, spacing: Style.spacing) {
-                            LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", textContentType: .emailAddress, isSecurity: false) { email, isValid in
+                            LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false) { email, isValid in
                                 isAccountValid = isValid
                                 store.send(.emailChanged(email))
                             }
-                            LoginTextField(title: "密碼", placeHolder: "輸入密碼", errorWording: "密碼格式不正確", pattern: "", textContentType: .password, isSecurity: true) { password, _ in
+                            LoginTextField(title: "密碼", placeHolder: "輸入密碼", errorWording: "", pattern: "", keyboardType: .default, isSecurity: true) { password, _ in
                                 store.send(.passwordChanged(password))
                             }
                             Text("忘記密碼?")
                                 .foregroundStyle(CathayColor.primary)
                                 .padding(.top, Style.spacing)
                             Button(action: {
-                                store.send(.loginButtonTapped)
+                                if store.state.loginStatus != .loading {
+                                    store.send(.loginButtonTapped)
+                                }
                             }) {
-                                Text("登入")
-                                    .foregroundColor(.white)
-                                    .frame(maxWidth: .infinity)
-                                    .padding()
-                                    .background(isAccountValid && !store.state.password.isEmpty ? CathayColor.primary : Color.gray.opacity(0.5))
-                                    .cornerRadius(10)
+                                if store.state.loginStatus == .loading {
+                                    HStack(alignment: .center) {
+                                        Spacer()
+                                        ProgressView()
+                                            .progressViewStyle(CircularProgressViewStyle())
+                                        Spacer()
+                                    }
+                                }
+                                if store.state.loginStatus != .loading {
+                                    Text("登入")
+                                        .foregroundColor(.white)
+                                        .frame(maxWidth: .infinity)
+                                        .padding()
+                                        .background(isAccountValid && !store.state.password.isEmpty ? CathayColor.primary : Color.gray.opacity(0.5))
+                                        .cornerRadius(10)
+                                }
                             }
-                            .disabled(!(isAccountValid && !store.state.password.isEmpty))
+                            .disabled(!(isAccountValid && !store.state.password.isEmpty && store.state.loginStatus != .loading))
                         }
                         Spacer()
                     }

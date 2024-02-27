@@ -24,6 +24,7 @@
 		9D1958C32B8DBF5E001C21D1 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C22B8DBF5E001C21D1 /* Color+Hex.swift */; };
 		9D1958C52B8DC4C2001C21D1 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */; };
 		9D1958C72B8DC977001C21D1 /* LoginTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */; };
+		9D1958CD2B8DD515001C21D1 /* InfoBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958CC2B8DD515001C21D1 /* InfoBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9D1958C22B8DBF5E001C21D1 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
 		9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginTextFieldModifier.swift; sourceTree = "<group>"; };
+		9D1958CC2B8DD515001C21D1 /* InfoBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +167,8 @@
 		9D1958C82B8DCE05001C21D1 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */,
-				9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */,
+				9D1958CB2B8DD4C1001C21D1 /* TextField */,
+				9D1958CC2B8DD515001C21D1 /* InfoBannerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -186,6 +188,15 @@
 				9D0F1E5D2B8DA145002B7F15 /* WelcomeView.swift */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9D1958CB2B8DD4C1001C21D1 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				9D1958C42B8DC4C2001C21D1 /* LoginTextField.swift */,
+				9D1958C62B8DC977001C21D1 /* LoginTextFieldModifier.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				9D0F1E662B8DADDB002B7F15 /* LoginState.swift in Sources */,
 				9D0F1E362B8CF230002B7F15 /* ContentView.swift in Sources */,
 				9D0F1E5E2B8DA145002B7F15 /* WelcomeView.swift in Sources */,
+				9D1958CD2B8DD515001C21D1 /* InfoBannerView.swift in Sources */,
 				9D0F1E632B8DAD0E002B7F15 /* LoginView.swift in Sources */,
 				9D1958C12B8DBE19001C21D1 /* CathayColor.swift in Sources */,
 				9D0F1E342B8CF230002B7F15 /* cathay_managerApp.swift in Sources */,

@@ -11,6 +11,7 @@ extension LoginReducer {
     enum Action: Equatable {
         case emailChanged(String)
         case passwordChanged(String)
+        case statusChange(LoginReducer.State.Status)
         case loginButtonTapped
     }
 }

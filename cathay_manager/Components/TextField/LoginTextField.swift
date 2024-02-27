@@ -22,16 +22,16 @@ struct LoginTextField: View {
     private let placeHolder: String
     private let errorWording: String
     private let pattern: String
-    private let textContentType: UITextContentType
+    private let keyboardType: UIKeyboardType
     private let onChange: ((String, Bool) -> Void)?
     private let maxLength = 32
     
-    init(title: String, placeHolder: String, errorWording: String, pattern: String, textContentType: UITextContentType, isSecurity: Bool, onChange: ((String, Bool) -> Void)?) {
+    init(title: String, placeHolder: String, errorWording: String, pattern: String, keyboardType: UIKeyboardType, isSecurity: Bool, onChange: ((String, Bool) -> Void)?) {
         self.title = title
         self.placeHolder = placeHolder
         self.errorWording = errorWording
         self.pattern = pattern
-        self.textContentType = textContentType
+        self.keyboardType = keyboardType
         self.isSecurity = isSecurity
         self.showEyeButton = isSecurity
         self.onChange = onChange
@@ -52,7 +52,7 @@ struct LoginTextField: View {
                             isValid = validate(contentWithMax)
                             onChange?(contentWithMax, isValid)
                         }
-                        .validationStyle(isValid: isValid, textContentType: textContentType)
+                        .validationStyle(isValid: isValid, keyboardType: keyboardType)
                 }
                 if !showEyeButton {
                     TextField(placeHolder, text: $content)
@@ -64,7 +64,7 @@ struct LoginTextField: View {
                             isValid = validate(contentWithMax)
                             onChange?(contentWithMax, isValid)
                         }
-                        .validationStyle(isValid: isValid, textContentType: textContentType)
+                        .validationStyle(isValid: isValid, keyboardType: keyboardType)
                 }
                 if isSecurity {
                     Button(action: {
@@ -96,6 +96,6 @@ struct LoginTextField: View {
 
 struct LoginTextField_Previews: PreviewProvider {
     static var previews: some View {
-        LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", textContentType: .emailAddress, isSecurity: false, onChange: nil)
+        LoginTextField(title: "帳號", placeHolder: "輸入帳號", errorWording: "帳號格式不正確", pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,32}", keyboardType: .emailAddress, isSecurity: false, onChange: nil)
     }
 }

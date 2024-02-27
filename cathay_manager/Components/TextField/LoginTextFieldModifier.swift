@@ -9,11 +9,11 @@ import SwiftUI
 
 struct LoginTextFieldModifier: ViewModifier {
     var isValid: Bool
-    var textContentType: UITextContentType
+    var keyboardType: UIKeyboardType
     
     func body(content: Content) -> some View {
         content
-            .textContentType(textContentType)
+            .keyboardType(keyboardType)
             .textFieldStyle(PlainTextFieldStyle())
             .padding(10)
             .overlay(
@@ -24,7 +24,7 @@ struct LoginTextFieldModifier: ViewModifier {
 }
 
 extension View {
-    func validationStyle(isValid: Bool, textContentType: UITextContentType) -> some View {
-        self.modifier(LoginTextFieldModifier(isValid: isValid, textContentType: textContentType))
+    func validationStyle(isValid: Bool, keyboardType: UIKeyboardType) -> some View {
+        self.modifier(LoginTextFieldModifier(isValid: isValid, keyboardType: keyboardType))
     }
 }
