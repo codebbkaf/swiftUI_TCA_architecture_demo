@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 struct ContentView: View {
+    
+    private let loginStore: StoreOf<LoginReducer>
+    
+    init(loginStore: StoreOf<LoginReducer>) {
+        self.loginStore = loginStore
+    }
     
     var body: some View {
         GeometryReader(content: { geometry in
@@ -15,6 +22,7 @@ struct ContentView: View {
                 WelcomeView()
                     .frame(width: geometry.size.width * 0.4)
                 Divider()
+                LoginView(store: loginStore)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         })
@@ -22,5 +30,7 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    ContentView(loginStore: Store(initialState: LoginReducer.State()) {
+        LoginReducer()
+    })
 }

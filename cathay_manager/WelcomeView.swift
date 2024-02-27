@@ -23,9 +23,11 @@ struct WelcomeView: View {
                 Text("嗨！歡迎回來")
                     .font(.title)
                     .fontWeight(.bold)
-                Image("welcome")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+                HStack(alignment: .center) {
+                    Image("welcome")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
                 Spacer()
             }
             .padding(Style.contentPadding)

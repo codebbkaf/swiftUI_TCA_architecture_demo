@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct cathay_managerApp: App {
+    
+    let loginStore = Store(initialState: LoginReducer.State()) {
+        LoginReducer()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(loginStore: loginStore)
         }
     }
 }
