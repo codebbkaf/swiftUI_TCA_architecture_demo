@@ -20,6 +20,8 @@
 		9D0F1E662B8DADDB002B7F15 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E652B8DADDB002B7F15 /* LoginState.swift */; };
 		9D0F1E682B8DADF6002B7F15 /* LoginAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E672B8DADF6002B7F15 /* LoginAction.swift */; };
 		9D0F1E6C2B8DAEC7002B7F15 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D0F1E6B2B8DAEC7002B7F15 /* LoginReducer.swift */; };
+		9D1958C12B8DBE19001C21D1 /* CathayColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C02B8DBE19001C21D1 /* CathayColor.swift */; };
+		9D1958C32B8DBF5E001C21D1 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D1958C22B8DBF5E001C21D1 /* Color+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		9D0F1E652B8DADDB002B7F15 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 		9D0F1E672B8DADF6002B7F15 /* LoginAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAction.swift; sourceTree = "<group>"; };
 		9D0F1E6B2B8DAEC7002B7F15 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
+		9D1958C02B8DBE19001C21D1 /* CathayColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CathayColor.swift; sourceTree = "<group>"; };
+		9D1958C22B8DBF5E001C21D1 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +113,8 @@
 				9D0F1E332B8CF230002B7F15 /* cathay_managerApp.swift */,
 				9D0F1E352B8CF230002B7F15 /* ContentView.swift */,
 				9D0F1E5D2B8DA145002B7F15 /* WelcomeView.swift */,
+				9D1958C02B8DBE19001C21D1 /* CathayColor.swift */,
+				9D1958C22B8DBF5E001C21D1 /* Color+Hex.swift */,
 				9D0F1E642B8DADB8002B7F15 /* Login */,
 				9D0F1E372B8CF232002B7F15 /* Assets.xcassets */,
 				9D0F1E392B8CF232002B7F15 /* Preview Content */,
@@ -293,8 +299,10 @@
 				9D0F1E362B8CF230002B7F15 /* ContentView.swift in Sources */,
 				9D0F1E5E2B8DA145002B7F15 /* WelcomeView.swift in Sources */,
 				9D0F1E632B8DAD0E002B7F15 /* LoginView.swift in Sources */,
+				9D1958C12B8DBE19001C21D1 /* CathayColor.swift in Sources */,
 				9D0F1E342B8CF230002B7F15 /* cathay_managerApp.swift in Sources */,
 				9D0F1E682B8DADF6002B7F15 /* LoginAction.swift in Sources */,
+				9D1958C32B8DBF5E001C21D1 /* Color+Hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

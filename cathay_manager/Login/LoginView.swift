@@ -10,6 +10,10 @@ import ComposableArchitecture
 
 struct LoginView: View {
     
+    private struct Style {
+        static let spacing: CGFloat = 20
+    }
+    
     private let store: StoreOf<LoginReducer>
     
     init(store: StoreOf<LoginReducer>) {
@@ -19,45 +23,64 @@ struct LoginView: View {
     var body: some View {
         WithViewStore(store, observe: { $0 }, content: { store in
             GeometryReader(content: { geometry in
-                VStack {
+                HStack {
                     Spacer()
-                    VStack(spacing: 15) {
-                        TextField("請輸入您的電子郵箱", text: store.binding(
-                            get: \.email,
-                            send: { .emailChanged($0) }
-                        ))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                        
-                        SecureField("密碼", text: store.binding(
-                            get: \.password,
-                            send: { .passwordChanged($0) }
-                        ))
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(.horizontal)
-                        
-                        Button(action: {
-                            store.send(.loginButtonTapped)
-                        }) {
-                            Text("登入")
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .background(Color.green)
-                                .cornerRadius(10)
+                    VStack(spacing: Style.spacing) {
+                        Spacer()
+                        HStack {
+                            VStack (alignment:.leading, spacing: Style.spacing) {
+                                Text("登入")
+                                    .font(.title2)
+                                    .fontWeight(.bold)
+                                Text("請輸入您的帳號密碼")
+                                    .font(.title3)
+                                    .fontWeight(.medium)
+                                    .foregroundStyle(Color.gray)
+                            }
+                            Spacer()
                         }
-                        .padding(.horizontal)
+                        .padding(.vertical, Style.spacing)
+                        VStack(alignment: .leading, spacing: Style.spacing) {
+                            Text("帳號")
+                                .foregroundStyle(Color.gray)
+                            TextField("輸入帳號", text: store.binding(
+                                get: \.email,
+                                send: { .emailChanged($0) }
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Text("密碼")
+                                .foregroundStyle(Color.gray)
+                            SecureField("輸入密碼", text: store.binding(
+                                get: \.password,
+                                send: { .passwordChanged($0) }
+                            ))
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            Text("忘記密碼?")
+                                .foregroundStyle(CathayColor.primary)
+                                .padding(.top, Style.spacing)
+                            Button(action: {
+                                store.send(.loginButtonTapped)
+                            }) {
+                                Text("登入")
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .background(CathayColor.primary)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        Spacer()
                     }
+                    .frame(maxWidth: geometry.size.width * 0.8, maxHeight: .infinity)
                     Spacer()
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             })
-        }
-        )
-    }}
+        })
+    }
+}
 
 #Preview {
-    LoginView(store: Store(initialState: LoginReducer.State()) {
+    ContentView(loginStore: Store(initialState: LoginReducer.State()) {
         LoginReducer()
     })
 }
